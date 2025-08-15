@@ -1,0 +1,49 @@
+---
+title: "Environments"
+description: "Understand how environments work in MpesaFlow and how to use them effectively."
+---
+
+MpesaFlow provides two environments **development** and **production** to help you build, test, and manage payments confidently.
+
+Each environment is isolated to support a different stage of your integration.
+
+## Development Environment
+
+Use the **development** environment to test your integration without sending real money. It uses Safaricom’s Daraja **sandbox**, allowing you to simulate payments and verify your setup safely.
+
+When you create an API key here, it begins with `mf_test_`, so you can clearly separate test data from live data.
+
+**What’s included:**
+
+- Simulate payments using sandbox credentials
+- Automatically assigned test credentials when you create an organization
+- Ability to add your own test (sandbox) credentials
+- API key and team management for testing
+- Supports all MpesaFlow features without affecting real users
+
+<Warning>
+Only use **Safaricom’s official sandbox credentials** in the development environment. Never use production credentials here.
+</Warning>
+
+You can manage your credentials [here](https://app.mpesaflow.com/credentials).
+
+Need help getting sandbox credentials? [Read our guide →](/docs/getting-credentials)
+
+## Production Environment
+
+Use the **production** environment when you're ready to go live and accept real payments.
+
+You’ll need to provide your **live Daraja credentials** before you can start processing real transactions. API keys in this environment begin with `mf_live_`.
+
+**What’s included:**
+
+- Accept live M-Pesa payments
+- Provide your own verified Daraja credentials
+- Generate and manage secure production API keys
+- View transaction data
+- View customer data
+- Add team members
+- Analytics
+- Webhook support (coming soon)
+
+Always test your integration in the development environment before switching to production.

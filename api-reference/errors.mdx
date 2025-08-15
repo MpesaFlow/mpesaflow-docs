@@ -1,0 +1,50 @@
+---
+title: Errors
+description: Troubleshoot problems with this comprehensive breakdown of all error codes.
+---
+
+## Error schema
+
+We use standard HTTP response codes for success and failure notifications, and our errors are further classified by type.
+
+### `validation_error`
+
+- **Status:** 400
+- **Message:** We found an error with one or more fields in the request.
+- **Suggested action:** The message will contain more details about what field and error were found.
+
+### `method_not_allowed`
+
+- **Status:** 405
+- **Message:** Method is not allowed for the requested path.
+- **Suggested action:** Change your API endpoint to use a valid method.
+
+### `too_many_requests`
+
+- **Status:** 429
+- **Message:** Too many requests. Please limit the number of requests per second. Or [contact support](https://mpesaflow.com/contact) to increase rate limit.
+- **Suggested action:** You should read the [response headers](./rate-limit) and reduce the rate at which you request the API. This can be done by introducing a queue mechanism or reducing the number of concurrent requests per second. If you have specific requirements, [contact support](https://resend.com/contact) to request a rate increase.
+
+### `missing_api_key`
+
+- **Status:** 401
+- **Message:** Missing API key in the authorization header.
+- **Suggested action:** Include the following header in the request: `Authorization: Bearer YOUR_API_KEY`.
+
+### `invalid_api_key`
+
+- **Status:** 403
+- **Message:** API key is invalid.
+- **Suggested action:** Make sure the API key is correct or generate a new [API key in the dashboard](https://app.mpesaflow.com/api-keys).
+
+### `not_found`
+
+- **Status:** 404
+- **Message:** The requested endpoint does not exist.
+- **Suggested action:** Change your request URL to match a valid API endpoint.
+
+### `internal_server_error`
+
+- **Status:** 500
+- **Message:** An unexpected error occurred.
+- **Suggested action:** Try the request again later. If the error does not resolve, check our [status page](https://status.mpesaflow.com) for service updates.

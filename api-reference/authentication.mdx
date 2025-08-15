@@ -1,0 +1,20 @@
+---
+title: "Authentication"
+description: "Learn about MpesaFlow API Key Authentication"
+---
+
+The MpesaFlow API uses API keys to authenticate requests. You can view and manage your API keys in API Keys paage in the MpesaFlow Dashboard.
+
+You can view and manage your API Keys on the [API Keys](https://app.mpesaflow.com/api-keys) page in the MpesaFlow Dashboard.
+
+<Frame>
+  ![Api Key Page](/images/api-reference/api-key-page.png)
+</Frame>
+
+Development API keys have the prefix `mf_test_` and Production API keys have the prefix `mf_live_`.
+
+Authentication to the API is performed via the Authorization header with a Bearer token. To authenticate, you need to include the Authorization header with the word Bearer followed by your token in your API requests like so:
+
+```terminal
+Authorization: Bearer mf_test_1234567890
+```

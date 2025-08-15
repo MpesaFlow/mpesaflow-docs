@@ -1,0 +1,103 @@
+{
+	"$schema": "https://mintlify.com/docs.json",
+	"name": "MpesaFlow Docs",
+	"description": "MpesaFlow Documentation for developers",
+	"theme": "maple",
+	"favicon": "/favicon.png",
+	"colors": {
+		"primary": "#16A34A",
+		"light": "#07C983",
+		"dark": "#15803D"
+	},
+	"integrations": {
+		"posthog": {
+			"apiKey": "phc_qhIL19YzFX2uzISzudtCkpGwEzwGFrBKsLw37g7WfKx"
+		}
+	},
+	"contextual": {
+		"options": ["copy", "view", "chatgpt", "claude", "perplexity"]
+	},
+	"errors": {
+		"404": {
+			"redirect": true
+		}
+	},
+	"logo": {
+		"light": "/logo/light.svg",
+		"dark": "/logo/dark.svg"
+	},
+	"navbar": {
+		"links": [
+			{
+				"label": "Support",
+				"href": "mailto:support@mpesaflow.com"
+			},
+			{
+				"label": "Dashboard",
+				"href": "https://app.mpesaflow.com"
+			}
+		]
+	},
+	"footer": {
+		"socials": {
+			"x": "https://x.com/mpesaflow",
+			"github": "https://github.com/mpesaflow",
+			"linkedin": "https://linkedin.com/company/mpesaflow",
+			"website": "https://mpesaflow.com"
+		}
+	},
+	"navigation": {
+		"dropdowns": [
+			{
+				"dropdown": "Documentation",
+				"icon": "book-open",
+				"groups": [
+					{
+						"group": "Get Started",
+						"pages": ["introduction", "setup-mpesaflow", "sdk"]
+					},
+					{
+						"group": "Dashboard",
+						"pages": ["dashboard/environments", "dashboard/credentials"]
+					},
+					{
+						"group": "Safaricom Daraja",
+						"pages": ["daraja/going-live", "daraja/getting-credentials"]
+					},
+					{
+						"group": "SDK Examples",
+						"pages": [
+							"sdk-examples/customer-management",
+							"sdk-examples/transaction-management",
+							"sdk-examples/express-payment"
+						]
+					}
+				]
+			},
+			{
+				"dropdown": "API References V1",
+				"icon": "square-terminal",
+				"groups": [
+					{
+						"group": "Getting Started",
+						"pages": [
+							"api-reference/introduction",
+							"api-reference/authentication",
+							"api-reference/errors",
+							"api-reference/rate-limit",
+							"api-reference/pagination",
+							"api-reference/versioning"
+						]
+					},
+					{
+						"group": "Endpoints",
+						"openapi": {
+							"source": "https://api.mpesaflow.dev/openapi",
+							"directory": "api-reference"
+						}
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,60 @@
+---
+title: "Introduction"
+description: "Fundamental concepts of MpesaFlow’s API."
+---
+
+## Base URL
+
+The MpesaFlow API is built on **REST** principles. We enforce **HTTPS** in every request to improve data security, integrity, and privacy. The API does not support **HTTP**.
+
+All requests contain the following base URL:
+
+```
+https://api.mpesaflow.dev
+```
+
+## Authentication
+
+To authenticate you need to add an _Authorization_ header with the contents of the header being `Bearer mf_test_1234567890` where `mf_test_1234567890` is your [API Key](https://app.mpesaflow.com/api-keys).
+
+```
+Authorization: Bearer mf_test_1234567890
+```
+
+## Response codes
+
+MpesaFlow uses standard HTTP codes to indicate the success or failure of your requests.
+
+In general, `2xx` HTTP codes correspond to success, `4xx` codes are for user-related failures, and `5xx` codes are for infrastructure issues.
+
+| Status | Description                                |
+| ------ | ------------------------------------------ |
+| `200`  | Successful request.                        |
+| `400`  | Check that the parameters were correct.    |
+| `401`  | The API key used was missing.              |
+| `403`  | The API key used was invalid.              |
+| `404`  | The resource was not found.                |
+| `429`  | The rate limit was exceeded.               |
+| `5xx`  | Indicates an error with MpesaFlow servers. |
+
+<Info>
+  Check [Error Codes](/api-reference/errors) for a comprehensive breakdown of all possible API errors.
+</Info>
+
+## Rate limit
+
+The default maximum rate limit is **2 requests per second**. This number can be increased for trusted senders by request. After that, you'll hit the rate limit and receive a `429` response error code.
+
+Learn more about our [rate limits](/api-reference/rate-limit).
+
+## Pagination
+
+The default maximum rate limit is **2 requests per second**. This number can be increased for trusted senders by request. After that, you'll hit the rate limit and receive a `429` response error code.
+
+Learn more about our [rate limits](/api-reference/rate-limit).
+
+## Versioning
+
+The default maximum rate limit is **2 requests per second**. This number can be increased for trusted senders by request. After that, you'll hit the rate limit and receive a `429` response error code.
+
+Learn more about our [rate limits](/api-reference/rate-limit).

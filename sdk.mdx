@@ -1,0 +1,74 @@
+---
+title: "Using the MpesaFlow SDK"
+description: "Learn how to get started with the MpesaFlow Typescript SDK."
+---
+
+The `@mpesaflow/sdk` is a type-safe Typescript SDK that allows you to access the resources and methods of the MpesaFlow REST API.
+
+<Steps>
+  <Step title="Install">
+    Get the MpesaFlow Typescript SDK.
+
+    <CodeGroup>
+
+    ```bash npm
+    npm install @mpesaflow/sdk
+    ```
+
+    
+    ```bash bun
+    bun install @mpesaflow/sdk
+    ```
+
+    
+    ```bash pnpm
+    pnpm install @mpesaflow/sdk
+    ```
+
+    </CodeGroup>
+  </Step>
+  <Step title="Add Authentcation">
+    Add your MpesaFlow API Key into the SDK. Your can get or create an API Key through the [MpesaFlow Dashboard](https://app.mpesaflow.com/api-keys).
+
+    ```typescript server.ts
+    import { MpesaFlow } from "@mpesaflow/sdk";
+    
+    const mpesaFlow = new MpesaFlow({
+      token: "MPESAFLOW_API_KEY",
+    });
+    ```
+  </Step>
+  <Step title="Send your first payment">
+    Send your first payment with the MpesaFlow SDK.
+
+    ```typescript server.ts
+    import { MpesaFlow } from "@mpesaflow/sdk";
+    
+    const mpesaFlow = new MpesaFlow({
+      token: "MPESAFLOW_API_KEY",
+    });
+    
+    async function run() {
+      const result = await mpesaFlow.express.pay({
+        phoneNumber: "254712345678",
+        amount: "100.00",
+        transactionDesc: "mpesaflow",
+        customerName: "John Doe",
+        accountReference: "mpesaflow",
+      });
+    
+      console.log(result);
+    }
+    
+    run();
+    ```
+  </Step>
+</Steps>
+
+### Examples
+
+Learn how to use MpesaFlow SDK through the following categories of examples:
+
+- [Transaction Management](/sdk-examples/transaction-management)
+- [Customer Management](/sdk-examples/customer-management)
+- [Express Payment](/sdk-examples/express-payment)
