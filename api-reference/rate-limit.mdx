@@ -3,7 +3,20 @@ title: "Rate Limits"
 description: "Learn about MpesaFlow’s API rate limits."
 ---
 
-We limit the number of calls you can make over a certain period of time. Rate limits vary and are specified by the following header in all responses:
+To ensure fair usage and protect the stability of the MpesaFlow API, requests are subject to **rate limits**.  
+
+Rate limits vary depending on the **environment** you are using `production` vs `development`.  
+
+## How Rate Limits Work
+
+- Each request you make to the API consumes from a **rate limit quota**.  
+- If you exceed your allocated limit, the API will return a `429 Too Many Requests` error.  
+- Rate limits are **scoped to your environment** (production or development).  
+  - Requests in **development** do not affect your **production quota**, and vice versa.
+
+## Rate Limit Headers
+
+Every response from the API includes rate limit headers so you can programmatically track your remaining quota:
 
 | Header                  | Description                                                                  |
 | ----------------------- | ---------------------------------------------------------------------------- |
@@ -17,8 +30,20 @@ When the rate limit is exceeded, an error is returned with the status “429 Too
 {
   "error": {
     "status": 429,
-    "code": "too_many_requests",
-    "message": "Too many requests, please try again later."
+    "code": "rate_limit_exceeded",
+    "message": "You have exceeded your request limit. Please try again later."
   }
 }
 ```
+
+## Environment-Based Limits
+
+We apply different rate limits depending on your environment:
+
+| Environment   | Requests per minute | Burst capacity |
+|---------------|----------------------|----------------|
+| **Production** | 100 requests/min     | 200 requests   |
+| **Development** | 20 requests/min      | 50 requests    |
+
+- Use **development keys** to build and test without worrying about exhausting your production quota.  
+- Switch to **production keys** when you go live with your integration.  

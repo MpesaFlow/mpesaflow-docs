@@ -41,9 +41,11 @@ In general, `2xx` HTTP codes correspond to success, `4xx` codes are for user-rel
   Check [Error Codes](/api-reference/errors) for a comprehensive breakdown of all possible API errors.
 </Info>
 
-## Rate limit
+## Rate limits
 
-The default maximum rate limit is **2 requests per second**. This number can be increased for trusted senders by request. After that, you'll hit the rate limit and receive a `429` response error code.
+To ensure fair usage and protect the stability of the API, all requests are subject to rate limiting.  
+
+If your application exceeds the allowed request rate, the API will return a `429 Too Many Requests` error response. 
 
 Learn more about our [rate limits](/api-reference/rate-limit).
 

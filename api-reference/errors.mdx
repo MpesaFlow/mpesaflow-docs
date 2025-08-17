@@ -19,10 +19,10 @@ We use standard HTTP response codes for success and failure notifications, and o
 - **Message:** Method is not allowed for the requested path.
 - **Suggested action:** Change your API endpoint to use a valid method.
 
-### `too_many_requests`
+### `rate_limit_exceeded`
 
 - **Status:** 429
-- **Message:** Too many requests. Please limit the number of requests per second. Or [contact support](https://mpesaflow.com/contact) to increase rate limit.
+- **Message:** You have exceeded your request limit. Please try again later.
 - **Suggested action:** You should read the [response headers](./rate-limit) and reduce the rate at which you request the API. This can be done by introducing a queue mechanism or reducing the number of concurrent requests per second. If you have specific requirements, [contact support](https://resend.com/contact) to request a rate increase.
 
 ### `missing_api_key`

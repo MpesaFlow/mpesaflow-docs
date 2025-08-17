@@ -15,7 +15,8 @@
 		}
 	},
 	"contextual": {
-		"options": [     "copy",
+		"options": [     
+      "copy",
      "view",
      "chatgpt",
      "claude",
@@ -69,7 +70,11 @@
 					},
 					{
 						"group": "Safaricom Daraja",
-						"pages": ["daraja/going-live", "daraja/getting-credentials"]
+						"pages": [
+                          "daraja/going-live", 
+                          "daraja/getting-credentials",
+                          "daraja/handling-callbacks"
+                        ]
 					},
 					{
 						"group": "SDK Examples",
